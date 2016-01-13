@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oTI-Pl-7Dl">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Rendelés-->
+        <scene sceneID="Ry1-CD-yk1">
+            <objects>
+                <viewController title="Rendelés" id="nJE-NU-ukk" customClass="OrderViewController" customModule="Pizza_SCH" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7fg-UH-WpC"/>
+                        <viewControllerLayoutGuide type="bottom" id="eu7-tE-T7k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Glv-o7-jis">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rendelés" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCm-bb-NoX">
+                                <rect key="frame" x="259" y="40" width="83" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAQ-7g-T13">
+                                <rect key="frame" x="238" y="285" width="124" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Pizza kiválasztása">
+                                    <color key="titleColor" red="1" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fjE-Go-0f8" kind="modal" identifier="selectPizzaSegue" id="HFI-yQ-Nke"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7J-te-jCL">
+                                <rect key="frame" x="0.0" y="335" width="600" height="216"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kd6-cj-Vfb">
+                                <rect key="frame" x="20" y="84" width="560" height="102"/>
+                                <animations/>
+                                <string key="text">Ha rendelsz, válassz egy fél órás periódust, ebben az időszakban meglepetés szerűen rontunk majd be a szobádba a kívánt pizzával.
+
+Ha bizonyos időszakok nincsenek a listában, az nem bug, hanem feature. Azok az időpontok beteltek.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="HCm-bb-NoX" firstAttribute="centerX" secondItem="Glv-o7-jis" secondAttribute="centerX" id="0DP-7e-kMj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e7J-te-jCL" secondAttribute="trailing" constant="-20" id="48y-ey-JFB"/>
+                            <constraint firstItem="e7J-te-jCL" firstAttribute="leading" secondItem="Glv-o7-jis" secondAttribute="leadingMargin" constant="-20" id="BIv-eB-iHt"/>
+                            <constraint firstItem="cAQ-7g-T13" firstAttribute="centerX" secondItem="Glv-o7-jis" secondAttribute="centerX" id="FkX-eV-hBg"/>
+                            <constraint firstItem="e7J-te-jCL" firstAttribute="top" secondItem="cAQ-7g-T13" secondAttribute="bottom" constant="20" id="RVc-85-oXQ"/>
+                            <constraint firstItem="eu7-tE-T7k" firstAttribute="top" secondItem="e7J-te-jCL" secondAttribute="bottom" id="TVT-Xw-7lW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kd6-cj-Vfb" secondAttribute="trailing" id="cRI-zH-CMQ"/>
+                            <constraint firstItem="Kd6-cj-Vfb" firstAttribute="top" secondItem="HCm-bb-NoX" secondAttribute="bottom" constant="20" id="jwk-Nw-8zx"/>
+                            <constraint firstItem="Kd6-cj-Vfb" firstAttribute="leading" secondItem="Glv-o7-jis" secondAttribute="leadingMargin" id="ocM-aw-ufU"/>
+                            <constraint firstItem="HCm-bb-NoX" firstAttribute="top" secondItem="7fg-UH-WpC" secondAttribute="bottom" constant="20" id="xwy-zc-xgH"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Rendelés" image="Purchase Order-25.png" id="ioL-I2-RQ9"/>
+                    <connections>
+                        <outlet property="pizzaPicker" destination="e7J-te-jCL" id="DE8-vS-Zpt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l86-xj-gPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="1230"/>
+        </scene>
+        <!--Pizza View Controller-->
+        <scene sceneID="yhi-yg-osG">
+            <objects>
+                <viewController id="fjE-Go-0f8" customClass="pizzaViewController" customModule="Pizza_SCH" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="60C-aH-eFc"/>
+                        <viewControllerLayoutGuide type="bottom" id="WUx-42-qlF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hBE-t8-xtO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cbo-Cm-p9I">
+                                <rect key="frame" x="497" y="170" width="63" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="32"/>
+                                    <segment title="50"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sizeSelectorChanged:" destination="fjE-Go-0f8" eventType="valueChanged" id="Tk3-R4-fLm"/>
+                                </connections>
+                            </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="bDm-WR-556">
+                                <rect key="frame" x="38" y="70" width="524" height="31"/>
+                                <animations/>
+                                <color key="minimumTrackTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="maximumTrackTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="timeSliderChanged:" destination="fjE-Go-0f8" eventType="valueChanged" id="rLu-PF-Z8L"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:30-19:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTr-2Z-DB1">
+                                <rect key="frame" x="253" y="110" width="95" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza mérete:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWZ-yH-XbX">
+                                <rect key="frame" x="40" y="170" width="104" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Megjegyzés.." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VJS-w9-Z2Q">
+                                <rect key="frame" x="40" y="281" width="520" height="148"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="feltetek" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHi-uL-7gO">
+                                <rect key="frame" x="271" y="449" width="58" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6f-Y0-KFb">
+                                <rect key="frame" x="271" y="550" width="59" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Mégsem"/>
+                                <connections>
+                                    <action selector="cancel:" destination="fjE-Go-0f8" eventType="touchUpInside" id="35w-Do-vml"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LC6-hD-KoJ">
+                                <rect key="frame" x="268" y="500" width="64" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Rendelés"/>
+                                <connections>
+                                    <action selector="orderButton:" destination="fjE-Go-0f8" eventType="touchUpInside" id="FOb-BV-fOs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="cHi-uL-7gO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hBE-t8-xtO" secondAttribute="leadingMargin" id="0Zu-Qi-TXi"/>
+                            <constraint firstItem="dWZ-yH-XbX" firstAttribute="top" secondItem="bDm-WR-556" secondAttribute="bottom" constant="70" id="13h-AF-Dyc"/>
+                            <constraint firstItem="cHi-uL-7gO" firstAttribute="centerX" secondItem="hBE-t8-xtO" secondAttribute="centerX" id="1a5-ai-fW8"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="cHi-uL-7gO" secondAttribute="trailing" id="47e-Vt-Hcr"/>
+                            <constraint firstItem="aTr-2Z-DB1" firstAttribute="top" secondItem="bDm-WR-556" secondAttribute="bottom" constant="10" id="6JO-PA-SZu"/>
+                            <constraint firstItem="cHi-uL-7gO" firstAttribute="centerX" secondItem="hBE-t8-xtO" secondAttribute="centerX" id="8O6-Y8-CO8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cbo-Cm-p9I" secondAttribute="trailing" constant="20" id="8pX-76-9aq"/>
+                            <constraint firstItem="dWZ-yH-XbX" firstAttribute="leading" secondItem="hBE-t8-xtO" secondAttribute="leadingMargin" constant="20" id="H8c-cS-ajq"/>
+                            <constraint firstItem="VJS-w9-Z2Q" firstAttribute="top" secondItem="aTr-2Z-DB1" secondAttribute="bottom" constant="150" id="HPC-V8-OVv"/>
+                            <constraint firstItem="cbo-Cm-p9I" firstAttribute="top" secondItem="bDm-WR-556" secondAttribute="bottom" constant="70" id="Ll4-ry-GOE"/>
+                            <constraint firstItem="LC6-hD-KoJ" firstAttribute="top" secondItem="cHi-uL-7gO" secondAttribute="bottom" constant="30" id="QzI-Zz-xdR"/>
+                            <constraint firstItem="VJS-w9-Z2Q" firstAttribute="leading" secondItem="hBE-t8-xtO" secondAttribute="leadingMargin" constant="20" id="UQo-Cf-Zjk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VJS-w9-Z2Q" secondAttribute="trailing" constant="20" id="VA2-BQ-uzs"/>
+                            <constraint firstItem="cHi-uL-7gO" firstAttribute="top" secondItem="VJS-w9-Z2Q" secondAttribute="bottom" constant="20" id="eEb-GW-0jg"/>
+                            <constraint firstItem="bDm-WR-556" firstAttribute="leading" secondItem="hBE-t8-xtO" secondAttribute="leadingMargin" constant="20" id="j3p-Sh-zkT"/>
+                            <constraint firstItem="D6f-Y0-KFb" firstAttribute="top" secondItem="LC6-hD-KoJ" secondAttribute="bottom" constant="20" id="k5r-Eb-6ED"/>
+                            <constraint firstItem="WUx-42-qlF" firstAttribute="top" secondItem="D6f-Y0-KFb" secondAttribute="bottom" constant="20" id="kqc-ki-BGl"/>
+                            <constraint firstItem="aTr-2Z-DB1" firstAttribute="centerX" secondItem="hBE-t8-xtO" secondAttribute="centerX" id="rah-Hp-0jX"/>
+                            <constraint firstItem="LC6-hD-KoJ" firstAttribute="centerX" secondItem="hBE-t8-xtO" secondAttribute="centerX" id="tVc-kl-svt"/>
+                            <constraint firstItem="bDm-WR-556" firstAttribute="top" secondItem="60C-aH-eFc" secondAttribute="bottom" constant="50" id="yMZ-NC-y3g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bDm-WR-556" secondAttribute="trailing" constant="20" id="zH4-kN-E52"/>
+                            <constraint firstItem="D6f-Y0-KFb" firstAttribute="centerX" secondItem="hBE-t8-xtO" secondAttribute="centerX" id="zbG-41-B04"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="commentText" destination="VJS-w9-Z2Q" id="QBF-tH-qaC"/>
+                        <outlet property="ingredLabel" destination="cHi-uL-7gO" id="opq-ew-qLm"/>
+                        <outlet property="sizeSelector" destination="cbo-Cm-p9I" id="lBc-yQ-xXK"/>
+                        <outlet property="timeLabel" destination="aTr-2Z-DB1" id="eIq-1A-biN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UMS-kN-sVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1227" y="1301"/>
+        </scene>
+        <!--Hírek-->
+        <scene sceneID="WMY-ol-40G">
+            <objects>
+                <viewController title="Hírek" id="bpB-LH-Cpc" customClass="NewsViewController" customModule="Pizza_SCH" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9g0-7Y-a1e"/>
+                        <viewControllerLayoutGuide type="bottom" id="ScH-Me-Mwb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="clC-XK-dR7" customClass="NewsV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpe-9y-isT">
+                                <rect key="frame" x="265" y="45" width="71" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34i-me-CQj">
+                                <rect key="frame" x="20" y="90" width="560" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Jpe-9y-isT" firstAttribute="top" secondItem="9g0-7Y-a1e" secondAttribute="bottom" constant="25" id="Ab1-1g-gay"/>
+                            <constraint firstItem="34i-me-CQj" firstAttribute="top" secondItem="9g0-7Y-a1e" secondAttribute="bottom" constant="70" id="Ml8-Pj-pJ5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="34i-me-CQj" secondAttribute="trailing" id="ZFC-Wq-YP0"/>
+                            <constraint firstItem="Jpe-9y-isT" firstAttribute="centerX" secondItem="clC-XK-dR7" secondAttribute="centerX" id="tFN-y7-Nrg"/>
+                            <constraint firstItem="34i-me-CQj" firstAttribute="leading" secondItem="clC-XK-dR7" secondAttribute="leadingMargin" id="ut4-5M-t2u"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Hírek" image="News-25.png" id="HVk-nd-9u1"/>
+                    <connections>
+                        <outlet property="headerLabel" destination="Jpe-9y-isT" id="FCr-G5-eku"/>
+                        <outlet property="textLabel" destination="34i-me-CQj" id="NQO-si-Uzj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cLX-Oe-OES" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="523"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Kyc-fu-eb1">
+            <objects>
+                <tabBarController storyboardIdentifier="UITabBarController" id="G0t-nb-Fcz" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="DDh-fR-Gjl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nJE-NU-ukk" kind="relationship" relationship="viewControllers" id="JUZ-1l-cqB"/>
+                        <segue destination="bpB-LH-Cpc" kind="relationship" relationship="viewControllers" id="bjU-cq-U4F"/>
+                        <segue destination="3T8-jt-Tea" kind="relationship" relationship="viewControllers" id="44n-sh-PMk"/>
+                        <segue destination="Twu-hV-D4S" kind="relationship" relationship="viewControllers" id="Ceg-mN-MFL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9m4-0l-DK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-511" y="2316"/>
+        </scene>
+        <!--Felhasználó-->
+        <scene sceneID="yiG-C2-kGL">
+            <objects>
+                <viewController storyboardIdentifier="UserViewController" id="Twu-hV-D4S" customClass="UserViewController" customModule="Pizza_SCH" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yIn-ld-beQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="03H-dm-Kbh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Sn-bj-AVF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zz7-cn-lLf">
+                                <rect key="frame" x="232" y="40" width="137" height="29"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Gj-iD-OAO">
+                                <rect key="frame" x="537" y="140" width="43" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlX-oH-ZuG">
+                                <rect key="frame" x="539" y="171" width="41" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JXz-FH-npI">
+                                <rect key="frame" x="555" y="202" width="25" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sr9-Sv-WWO">
+                                <rect key="frame" x="555" y="242" width="25" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST1-yT-TUu">
+                                <rect key="frame" x="517" y="206" width="35" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="azJ-11-zYx">
+                                <rect key="frame" x="20" y="140" width="100" height="100"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="AxP-u4-oQ9"/>
+                                    <constraint firstAttribute="height" constant="100" id="RIF-1a-jtO"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="bwv-gq-nmO"/>
+                                    <constraint firstAttribute="height" constant="100" id="gFA-FO-NSQ"/>
+                                    <constraint firstAttribute="width" constant="200" id="kcX-ev-NwB"/>
+                                    <constraint firstAttribute="width" constant="100" id="yGZ-1p-grf"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="AxP-u4-oQ9"/>
+                                        <exclude reference="RIF-1a-jtO"/>
+                                        <exclude reference="bwv-gq-nmO"/>
+                                        <exclude reference="kcX-ev-NwB"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q51-xp-Ps0">
+                                <rect key="frame" x="275" y="471" width="51" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Mentés">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButton:" destination="Twu-hV-D4S" eventType="touchUpInside" id="5k7-1t-acB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="zz7-cn-lLf" firstAttribute="centerX" secondItem="8Sn-bj-AVF" secondAttribute="centerX" id="0e1-AZ-4E3"/>
+                            <constraint firstItem="2Gj-iD-OAO" firstAttribute="top" secondItem="yIn-ld-beQ" secondAttribute="bottom" constant="120" id="1xi-wd-uCc"/>
+                            <constraint firstItem="sr9-Sv-WWO" firstAttribute="top" secondItem="JXz-FH-npI" secondAttribute="bottom" constant="10" id="4Uq-gX-d57"/>
+                            <constraint firstItem="azJ-11-zYx" firstAttribute="leading" secondItem="8Sn-bj-AVF" secondAttribute="leadingMargin" id="5Ga-Wr-Sh9"/>
+                            <constraint firstItem="dlX-oH-ZuG" firstAttribute="trailing" secondItem="8Sn-bj-AVF" secondAttribute="trailingMargin" id="BJR-eo-0af"/>
+                            <constraint firstItem="JXz-FH-npI" firstAttribute="leading" secondItem="ST1-yT-TUu" secondAttribute="trailing" constant="3" id="Enw-Ml-nP0"/>
+                            <constraint firstItem="q51-xp-Ps0" firstAttribute="centerX" secondItem="8Sn-bj-AVF" secondAttribute="centerX" id="Fiy-47-Rbh"/>
+                            <constraint firstItem="sr9-Sv-WWO" firstAttribute="trailing" secondItem="8Sn-bj-AVF" secondAttribute="trailingMargin" id="HVt-SP-Zya"/>
+                            <constraint firstItem="JXz-FH-npI" firstAttribute="trailing" secondItem="8Sn-bj-AVF" secondAttribute="trailingMargin" id="HoA-GW-aVm"/>
+                            <constraint firstItem="JXz-FH-npI" firstAttribute="top" secondItem="dlX-oH-ZuG" secondAttribute="bottom" constant="10" id="ISK-Gj-Mm5"/>
+                            <constraint firstItem="2Gj-iD-OAO" firstAttribute="trailing" secondItem="8Sn-bj-AVF" secondAttribute="trailingMargin" id="S2h-hm-c3P"/>
+                            <constraint firstItem="03H-dm-Kbh" firstAttribute="top" secondItem="q51-xp-Ps0" secondAttribute="bottom" constant="50" id="bcf-Vd-bwx"/>
+                            <constraint firstItem="ST1-yT-TUu" firstAttribute="top" secondItem="dlX-oH-ZuG" secondAttribute="bottom" constant="14" id="hXH-hX-NJK"/>
+                            <constraint firstItem="azJ-11-zYx" firstAttribute="top" secondItem="yIn-ld-beQ" secondAttribute="bottom" constant="120" id="tlP-9w-gq6"/>
+                            <constraint firstItem="dlX-oH-ZuG" firstAttribute="top" secondItem="2Gj-iD-OAO" secondAttribute="bottom" constant="10" id="vBV-LY-aCU"/>
+                            <constraint firstItem="zz7-cn-lLf" firstAttribute="top" secondItem="yIn-ld-beQ" secondAttribute="bottom" constant="20" id="zKQ-uf-7KX"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Felhasználó" image="Businessman-25.png" id="f4c-sb-jAS"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="dlX-oH-ZuG" id="nCs-zr-rdv"/>
+                        <outlet property="nameLabel" destination="2Gj-iD-OAO" id="xna-d6-6ts"/>
+                        <outlet property="phoneField" destination="sr9-Sv-WWO" id="wWE-d2-XJx"/>
+                        <outlet property="profileImage" destination="azJ-11-zYx" id="Bis-07-9uU"/>
+                        <outlet property="roomField" destination="JXz-FH-npI" id="say-jw-wLq"/>
+                        <outlet property="usernameLabel" destination="zz7-cn-lLf" id="UKA-yU-CcV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MhH-6l-IoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="2158"/>
+        </scene>
+        <!--Rólunk-->
+        <scene sceneID="BWs-Sc-LTr">
+            <objects>
+                <viewController title="Rólunk" id="3T8-jt-Tea" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S0b-cL-m8Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="0pc-Ha-0bA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WdV-8k-BUQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOn-8m-TQX">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rólunk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bue-QC-bzr">
+                                        <rect key="frame" x="267" y="25" width="67" height="24"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30a-Si-ce7">
+                                        <rect key="frame" x="28" y="99" width="536" height="122"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" priority="100" constant="500" id="lY8-Xw-3Xl"/>
+                                        </constraints>
+                                        <string key="text">A PizzáSCH kör 2004 első felében jött létre egy baráti társaságból, és azóta látja el friss, helyben sütött pizzával az éhes kollégistákat. Szerda esténként az előre leadott rendelések alapján sütjük a pizzákat. Kínálatunkban a közismert pizzafajtákon kívül megtalálható több különleges pizza is. Emellett gyakran megfordulunk Gólyabálokon, bulikon, villanykaros és külsős rendezvényeken is.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="lY8-Xw-3Xl"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaN-FS-b5Q">
+                                        <rect key="frame" x="28" y="271" width="544" height="771"/>
+                                        <animations/>
+                                        <string key="text">Kínálatunk...
+
+?????	(paradicsomos alap, Pick szalámi, vöröshagyma, bab, mozzarella)
+
+Albínó Batman	(fokhagymás alap, Pick szalámi, lilahagyma, kukorica, mozzarella)
+
+Almageddon	(mustáros alap, sonka, kukorica, alma, mozzarella)
+
+HaHaA	(paradicsomos alap, tonhal, vöröshagyma, olívabogyó, mozzarella)
+
+Hawaii	(paradicsomos alap, sonka, kukorica, ananász, mozzarella)
+
+Joker	(paradicsomos alap, Pick szalámi, bacon, lilahagyma, mozzarella)
+
+Kusza	(paradicsomos alap, Pick szalámi, kukorica, mozzarella)
+
+Magyaros	(paradicsomos alap, Pick szalámi, bacon, vöröshagyma, erőspaprika, mozzarella)
+
+MC Star	(mustáros alap, bacon, sonka, lilahagyma, mozzarella)
+
+Ördög :)	(erős alap, Pick szalámi, bacon, pepperóni, mozzarella)
+
+Randi	(fokhagymás alap, bacon, sonka, vöröshagyma, mozzarella)
+
+Songoku	(paradicsomos alap, sonka, kukorica, friss gomba, mozzarella)
+
+Sonkás	(paradicsomos alap, sonka, paradicsom, mozzarella)
+
+Szalámis	(paradicsomos alap, Pick szalámi, paradicsom, paprika, mozzarella)
+
+YoLo	(fokhagymás alap, sonka, paradicsom, olívabogyó, mozzarella)</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="30a-Si-ce7" secondAttribute="trailing" constant="10" id="2OC-yf-wsu"/>
+                                    <constraint firstItem="QaN-FS-b5Q" firstAttribute="top" secondItem="30a-Si-ce7" secondAttribute="bottom" constant="50" id="7EY-3X-UTo"/>
+                                    <constraint firstAttribute="trailing" secondItem="QaN-FS-b5Q" secondAttribute="trailing" constant="20" id="7IG-EG-tAG"/>
+                                    <constraint firstItem="30a-Si-ce7" firstAttribute="top" secondItem="Bue-QC-bzr" secondAttribute="bottom" constant="50" id="HXO-uD-vjY"/>
+                                    <constraint firstItem="Bue-QC-bzr" firstAttribute="centerX" secondItem="XOn-8m-TQX" secondAttribute="centerX" id="IKd-rn-MJh"/>
+                                    <constraint firstItem="30a-Si-ce7" firstAttribute="top" secondItem="Bue-QC-bzr" secondAttribute="bottom" constant="50" id="Kc8-DR-8Ny"/>
+                                    <constraint firstItem="QaN-FS-b5Q" firstAttribute="centerX" secondItem="XOn-8m-TQX" secondAttribute="centerX" id="VM5-FM-rBc"/>
+                                    <constraint firstItem="30a-Si-ce7" firstAttribute="leading" secondItem="XOn-8m-TQX" secondAttribute="leadingMargin" constant="20" id="Xbc-IE-Iys"/>
+                                    <constraint firstItem="QaN-FS-b5Q" firstAttribute="leading" secondItem="XOn-8m-TQX" secondAttribute="leadingMargin" constant="20" id="dR9-GN-PdP"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="30a-Si-ce7" secondAttribute="trailing" constant="20" id="mFD-fB-6a2"/>
+                                    <constraint firstItem="30a-Si-ce7" firstAttribute="leading" secondItem="XOn-8m-TQX" secondAttribute="leading" constant="10" id="xYW-5I-r9G"/>
+                                    <constraint firstAttribute="bottom" secondItem="QaN-FS-b5Q" secondAttribute="bottom" constant="50" id="yBJ-tt-k9u"/>
+                                    <constraint firstItem="Bue-QC-bzr" firstAttribute="top" secondItem="XOn-8m-TQX" secondAttribute="top" constant="25" id="znv-k7-ZR5"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2OC-yf-wsu"/>
+                                        <exclude reference="HXO-uD-vjY"/>
+                                        <exclude reference="xYW-5I-r9G"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="XOn-8m-TQX" secondAttribute="bottom" id="Lvc-g5-uVj"/>
+                            <constraint firstAttribute="trailing" secondItem="XOn-8m-TQX" secondAttribute="trailing" id="RkX-WC-aOH"/>
+                            <constraint firstItem="XOn-8m-TQX" firstAttribute="top" secondItem="WdV-8k-BUQ" secondAttribute="topMargin" id="kL7-eF-Bgk"/>
+                            <constraint firstItem="XOn-8m-TQX" firstAttribute="leading" secondItem="WdV-8k-BUQ" secondAttribute="leading" id="obD-Gh-Mfg"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Rólunk" image="Pizza-25.png" id="HD1-D1-JPH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Dq-LB-xW6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="2857"/>
+        </scene>
+        <!--Bejelentkezés-->
+        <scene sceneID="N3e-II-PG0">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" title="Felhasználó" id="oTI-Pl-7Dl" userLabel="Bejelentkezés" customClass="LoginViewController" customModule="Pizza_SCH" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wV6-kJ-hJb"/>
+                        <viewControllerLayoutGuide type="bottom" id="eqN-ie-2gi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z8m-Pq-YG9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AEm-AG-2gu">
+                                <rect key="frame" x="70" y="285" width="460" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="pizzasch" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TY0-U7-ukg">
+                                <rect key="frame" x="70" y="235" width="460" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bejelentkezés" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea7-0E-B0w">
+                                <rect key="frame" x="220" y="40" width="160" height="32"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGw-5B-C8R">
+                                <rect key="frame" x="253" y="365" width="95" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Bejelentkezés">
+                                    <color key="titleColor" red="1" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginAction:" destination="oTI-Pl-7Dl" eventType="touchUpInside" id="oVx-HL-clU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="TY0-U7-ukg" firstAttribute="centerX" secondItem="z8m-Pq-YG9" secondAttribute="centerX" id="53P-6A-nt0"/>
+                            <constraint firstItem="ea7-0E-B0w" firstAttribute="centerX" secondItem="z8m-Pq-YG9" secondAttribute="centerX" id="84x-of-AYD"/>
+                            <constraint firstItem="AEm-AG-2gu" firstAttribute="centerY" secondItem="z8m-Pq-YG9" secondAttribute="centerY" id="CT6-74-gbI"/>
+                            <constraint firstItem="AEm-AG-2gu" firstAttribute="leading" secondItem="z8m-Pq-YG9" secondAttribute="leadingMargin" constant="50" id="Jx7-lE-rPt"/>
+                            <constraint firstItem="AEm-AG-2gu" firstAttribute="top" secondItem="TY0-U7-ukg" secondAttribute="bottom" constant="20" id="Ma5-gD-NgF"/>
+                            <constraint firstItem="JGw-5B-C8R" firstAttribute="top" secondItem="AEm-AG-2gu" secondAttribute="bottom" constant="50" id="MhX-OR-s1l"/>
+                            <constraint firstItem="TY0-U7-ukg" firstAttribute="leading" secondItem="z8m-Pq-YG9" secondAttribute="leadingMargin" constant="50" id="Om1-Mf-1Wl"/>
+                            <constraint firstItem="JGw-5B-C8R" firstAttribute="centerX" secondItem="z8m-Pq-YG9" secondAttribute="centerX" id="hAt-bH-4qZ"/>
+                            <constraint firstItem="ea7-0E-B0w" firstAttribute="top" secondItem="wV6-kJ-hJb" secondAttribute="bottom" constant="20" id="laZ-ma-W4z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AEm-AG-2gu" secondAttribute="trailing" constant="50" id="nkv-En-oY1"/>
+                            <constraint firstItem="AEm-AG-2gu" firstAttribute="centerX" secondItem="z8m-Pq-YG9" secondAttribute="centerX" id="uHR-Ip-2IV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TY0-U7-ukg" secondAttribute="trailing" constant="50" id="vrw-Y8-PsS"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Személyes" id="H8g-Vk-RVj"/>
+                    <connections>
+                        <outlet property="passTextField" destination="AEm-AG-2gu" id="fqt-0G-FwF"/>
+                        <outlet property="userTextField" destination="TY0-U7-ukg" id="d7m-cp-E0N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PMB-rX-UGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-687" y="3078"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Businessman-25.png" width="25" height="25"/>
+        <image name="News-25.png" width="25" height="25"/>
+        <image name="Pizza-25.png" width="25" height="25"/>
+        <image name="Purchase Order-25.png" width="25" height="25"/>
+    </resources>
+    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+</document>
